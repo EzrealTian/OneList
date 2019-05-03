@@ -16,8 +16,8 @@ class GroupTableViewCell: UITableViewCell {
     @IBOutlet weak var textLabel3: UILabel!
     @IBOutlet weak var textLabel4: UILabel!
     @IBOutlet weak var textLabel5: UILabel!
-    var index = 0
-    
+    @IBOutlet weak var mainView: UIView!
+    var indexPath: IndexPath?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

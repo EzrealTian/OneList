@@ -13,35 +13,46 @@ class GroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let info = sender as! IndexPath
         let to = segue.destination as! DetailViewController
-        to.title2 = "\(info.section)"
-        
+        to.listTitle = TitleList[info.row]
+        to.detailList = Details[to.listTitle!]
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return TitleList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableCell", for: indexPath) as! GroupTableViewCell
-        cell.index = 2
+        cell.titleLabel.text = TitleList[indexPath.row]
+        let list:[String?] = Details[TitleList[indexPath.row]]!
+        cell.textLabel1.text = list[0] ?? ""
+        cell.textLabel2.text = list[1] ?? ""
+        cell.textLabel3.text = list[2] ?? ""
+        cell.textLabel4.text = list[3] ?? ""
+        cell.textLabel5.text = list[4] ?? ""
+        cell.indexPath = indexPath
+        cell.mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handle(sender: ))))
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "move", sender: indexPath)
+    @objc func handle(sender: UITapGestureRecognizer) {
+        let cell = sender.view?.superview?.superview as! GroupTableViewCell
+        print("hello")
+        performSegue(withIdentifier: "move", sender: cell.indexPath)
     }
+    
+    //override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //performSegue(withIdentifier: "move", sender: indexPath)
+    //}
     
 
     /*

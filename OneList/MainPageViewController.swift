@@ -27,4 +27,8 @@ class MainPageViewController: UIViewController {
         leftMenuIsOpen = !leftMenuIsOpen
     }
     
+    @IBAction func addButtonTapped(_ sender: Any) {
+    }
+    
+    
 }

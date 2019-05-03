@@ -17,6 +17,8 @@
 		7773D1812270450A001ACA1A /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D1802270450A001ACA1A /* GroupTableViewCell.swift */; };
 		7773D183227048BD001ACA1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D182227048BD001ACA1A /* DetailViewController.swift */; };
 		7773D185227052C5001ACA1A /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D184227052C5001ACA1A /* MainPageViewController.swift */; };
+		77782AE2227BDECD001BA697 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77782AE1227BDECD001BA697 /* Data.swift */; };
+		77782AE4227BE3F8001BA697 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77782AE3227BE3F8001BA697 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		7773D1802270450A001ACA1A /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		7773D182227048BD001ACA1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7773D184227052C5001ACA1A /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		77782AE1227BDECD001BA697 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		77782AE3227BE3F8001BA697 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,14 @@
 				7773D17E227044E0001ACA1A /* GroupTableViewController.swift */,
 				7773D1802270450A001ACA1A /* GroupTableViewCell.swift */,
 				7773D182227048BD001ACA1A /* DetailViewController.swift */,
+				77782AE3227BE3F8001BA697 /* DetailTableViewCell.swift */,
 				7773D184227052C5001ACA1A /* MainPageViewController.swift */,
 				7773D16D22703016001ACA1A /* Main.storyboard */,
 				7773D1732270301C001ACA1A /* Assets.xcassets */,
 				7773D1752270301C001ACA1A /* LaunchScreen.storyboard */,
 				7773D1782270301C001ACA1A /* Info.plist */,
 				7773D17022703016001ACA1A /* OneList.xcdatamodeld */,
+				77782AE1227BDECD001BA697 /* Data.swift */,
 			);
 			path = OneList;
 			sourceTree = "<group>";
@@ -150,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77782AE4227BE3F8001BA697 /* DetailTableViewCell.swift in Sources */,
 				7773D16C22703016001ACA1A /* ViewController.swift in Sources */,
 				7773D185227052C5001ACA1A /* MainPageViewController.swift in Sources */,
 				7773D17F227044E0001ACA1A /* GroupTableViewController.swift in Sources */,
@@ -157,6 +164,7 @@
 				7773D183227048BD001ACA1A /* DetailViewController.swift in Sources */,
 				7773D17222703016001ACA1A /* OneList.xcdatamodeld in Sources */,
 				7773D1812270450A001ACA1A /* GroupTableViewCell.swift in Sources */,
+				77782AE2227BDECD001BA697 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,13 +313,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TG2BW6J7T;
 				INFOPLIST_FILE = OneList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ezreal.OneList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -323,13 +332,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TG2BW6J7T;
 				INFOPLIST_FILE = OneList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ezreal.OneList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,14 +8,31 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    var title2: String?
-    @IBOutlet weak var titleLabel: UILabel!
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var index: Int?
+    var listTitle: String?
+    var detailList: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = title2
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.delegate = self
     }
+    
+}
 
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (detailList?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+        cell.textLabel?.text = detailList![indexPath.row]
+        return cell
+    }
 }
