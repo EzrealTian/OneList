@@ -13,7 +13,6 @@
 		7773D17222703016001ACA1A /* OneList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7773D17022703016001ACA1A /* OneList.xcdatamodeld */; };
 		7773D1742270301C001ACA1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7773D1732270301C001ACA1A /* Assets.xcassets */; };
 		7773D1772270301C001ACA1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7773D1752270301C001ACA1A /* LaunchScreen.storyboard */; };
-		7773D17F227044E0001ACA1A /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D17E227044E0001ACA1A /* GroupTableViewController.swift */; };
 		7773D1812270450A001ACA1A /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D1802270450A001ACA1A /* GroupTableViewCell.swift */; };
 		7773D183227048BD001ACA1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D182227048BD001ACA1A /* DetailViewController.swift */; };
 		7773D185227052C5001ACA1A /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773D184227052C5001ACA1A /* MainPageViewController.swift */; };
@@ -30,7 +29,6 @@
 		7773D1732270301C001ACA1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7773D1762270301C001ACA1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7773D1782270301C001ACA1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7773D17E227044E0001ACA1A /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		7773D1802270450A001ACA1A /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		7773D182227048BD001ACA1A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7773D184227052C5001ACA1A /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			children = (
 				7773D16922703016001ACA1A /* AppDelegate.swift */,
 				7773D16B22703016001ACA1A /* ViewController.swift */,
-				7773D17E227044E0001ACA1A /* GroupTableViewController.swift */,
 				7773D1802270450A001ACA1A /* GroupTableViewCell.swift */,
 				7773D182227048BD001ACA1A /* DetailViewController.swift */,
 				77782AE3227BE3F8001BA697 /* DetailTableViewCell.swift */,
@@ -159,7 +156,6 @@
 				77782AE4227BE3F8001BA697 /* DetailTableViewCell.swift in Sources */,
 				7773D16C22703016001ACA1A /* ViewController.swift in Sources */,
 				7773D185227052C5001ACA1A /* MainPageViewController.swift in Sources */,
-				7773D17F227044E0001ACA1A /* GroupTableViewController.swift in Sources */,
 				7773D16A22703016001ACA1A /* AppDelegate.swift in Sources */,
 				7773D183227048BD001ACA1A /* DetailViewController.swift in Sources */,
 				7773D17222703016001ACA1A /* OneList.xcdatamodeld in Sources */,

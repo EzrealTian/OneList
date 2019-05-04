@@ -19,6 +19,7 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var startYear: UILabel!
@@ -35,6 +36,8 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
         let calender = Calendar.current
         component = calender.dateComponents([.year, .month, .day, .weekday], from: Date())
@@ -52,6 +55,10 @@ class MainPageViewController: UIViewController {
         endMonth.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endTimeEditGesture)))
         endDay.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endTimeEditGesture)))
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     private func initDatePicker(component: DateComponents) {
@@ -122,10 +129,15 @@ class MainPageViewController: UIViewController {
     }
     
     @objc func visualEffectViewWithdraw() {
+        if !leftMenuIsOpen && !TitleList.contains(titleTextField.text!) {
+            TitleList.append(titleTextField.text!)
+            Details[titleTextField.text!] = []
+            tableView.reloadData()
+        }
         selectViewBottomConstraints.constant = 0
         datePickerBottomConstraints.constant = -216
         leftMenuWidthConstraints.constant = 0
-        leftMenuIsOpen = leftMenuIsOpen ? false : true
+        leftMenuIsOpen = false
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
@@ -146,6 +158,7 @@ class MainPageViewController: UIViewController {
     
     @IBAction func addButtonTapped(_ sender: Any) {
         initDatePicker(component: component!)
+        titleTextField.text = "标题"
         visualEffectView.isHidden = false
         selectViewBottomConstraints.constant = 500
         UIView.animate(withDuration: 0.2) {
@@ -172,5 +185,39 @@ extension MainPageViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension MainPageViewController: UITableViewDelegate, UITableViewDataSource {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let info = sender as! IndexPath
+        let to = segue.destination as! DetailViewController
+        to.listTitle = TitleList[info.row]
+        to.detailList = Details[to.listTitle!]
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return TitleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableCell", for: indexPath) as! GroupTableViewCell
+        cell.titleLabel.text = TitleList[indexPath.row]
+        let list:[String?] = Details[TitleList[indexPath.row]]!
+        cell.textLabel1.text = list.count > 0 ? list[0] : ""
+        cell.textLabel2.text = list.count > 1 ? list[1] : ""
+        cell.textLabel3.text = list.count > 2 ? list[2] : ""
+        cell.textLabel4.text = list.count > 3 ? list[3] : ""
+        cell.textLabel5.text = list.count > 4 ? list[4] : ""
+        cell.indexPath = indexPath
+        cell.mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handle(sender: ))))
+        return cell
+    }
+    
+    @objc func handle(sender: UITapGestureRecognizer) {
+        let cell = sender.view?.superview?.superview as! GroupTableViewCell
+        print("hello")
+        performSegue(withIdentifier: "move", sender: cell.indexPath)
     }
 }

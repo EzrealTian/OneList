@@ -9,11 +9,11 @@
 import Foundation
 
 
-let TitleList = [
+var TitleList = [
     "week1", "week2", "week3"
 ]
 
-let Details = [
+var Details = [
     "week1":["看书","写字","玩","打游戏","旅游","看书","写字"],
     "week2":["tyx","写字","玩","打游戏","旅游","看书","写字"],
     "week3":["ezreal","写字","玩","打游戏","旅游","看书","写字"],

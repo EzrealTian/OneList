@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var tableView: UITableView!
     var index: Int?
     var listTitle: String?
-    var detailList: [String]?
+    var detailList: [String?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
